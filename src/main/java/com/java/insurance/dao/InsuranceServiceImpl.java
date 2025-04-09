@@ -19,8 +19,8 @@ public class InsuranceServiceImpl implements IPolicyService {
         ps.setInt(1, policy.getPolicyId());
         ps.setString(2, policy.getPolicyName());
         ps.setString(3, policy.getPolicyType());
-        ps.setDouble(4, policy.getPremiumAmount());       // ✅ updated
-        ps.setDouble(5, policy.getCoverageAmount());      // ✅ updated
+        ps.setDouble(4, policy.getPremiumAmount());      
+        ps.setDouble(5, policy.getCoverageAmount());     
         int rows = ps.executeUpdate();
         con.close();
         return rows > 0;
@@ -39,8 +39,8 @@ public class InsuranceServiceImpl implements IPolicyService {
                 rs.getInt("policyId"),
                 rs.getString("policyName"),
                 rs.getString("policyType"),
-                rs.getDouble("premiumAmount"),             // ✅ updated
-                rs.getDouble("coverageAmount")             // ✅ updated
+                rs.getDouble("premiumAmount"),            
+                rs.getDouble("coverageAmount")        
             );
         }
         con.close();
@@ -59,8 +59,8 @@ public class InsuranceServiceImpl implements IPolicyService {
                 rs.getInt("policyId"),
                 rs.getString("policyName"),
                 rs.getString("policyType"),
-                rs.getDouble("premiumAmount"),             // ✅ updated
-                rs.getDouble("coverageAmount")             // ✅ updated
+                rs.getDouble("premiumAmount"),            
+                rs.getDouble("coverageAmount")       
             ));
         }
         con.close();
@@ -74,8 +74,8 @@ public class InsuranceServiceImpl implements IPolicyService {
         PreparedStatement ps = con.prepareStatement(query);
         ps.setString(1, policy.getPolicyName());
         ps.setString(2, policy.getPolicyType());
-        ps.setDouble(3, policy.getPremiumAmount());        // ✅ updated
-        ps.setDouble(4, policy.getCoverageAmount());       // ✅ updated
+        ps.setDouble(3, policy.getPremiumAmount());      
+        ps.setDouble(4, policy.getCoverageAmount());      
         ps.setInt(5, policy.getPolicyId());
         int rows = ps.executeUpdate();
         con.close();

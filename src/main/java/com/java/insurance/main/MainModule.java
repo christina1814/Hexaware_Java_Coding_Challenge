@@ -16,7 +16,7 @@ public class MainModule {
             int choice;
 
             do {
-                System.out.println("\n-------- Insurance Policy Management --------------");
+                System.out.println("\n---------- Insurance Policy Management --------------");
                 System.out.println("1. Add Policy");
                 System.out.println("2. View All Policies");
                 System.out.println("3. Search Policy by ID");
@@ -61,7 +61,7 @@ public class MainModule {
                         if (foundPolicy != null) {
                             System.out.println(foundPolicy);
                         } else {
-                            throw new PolicyNotFoundException("❌ Policy ID " + searchId + " not found.");
+                            throw new PolicyNotFoundException("Policy ID " + searchId + " not found...");
                         }
                         break;
 
@@ -82,13 +82,13 @@ public class MainModule {
 
                             policyToUpdate.setPolicyName(newName);
                             policyToUpdate.setPolicyType(newType);
-                            policyToUpdate.setPremiumAmount(newPremiumAmount);   // ✅ updated
-                            policyToUpdate.setCoverageAmount(newCoverageAmount); // ✅ updated
+                            policyToUpdate.setPremiumAmount(newPremiumAmount);   
+                            policyToUpdate.setCoverageAmount(newCoverageAmount); 
 
                             boolean updated = service.updatePolicy(policyToUpdate);
-                            System.out.println(updated ? "✅ Policy updated successfully!" : "❌ Update failed.");
+                            System.out.println(updated ? "Policy updated successfully!" : "Update failed...");
                         } else {
-                            throw new PolicyNotFoundException("❌ Policy ID " + updateId + " not found.");
+                            throw new PolicyNotFoundException("Policy ID " + updateId + " not found...");
                         }
                         break;
 
@@ -96,15 +96,15 @@ public class MainModule {
                         System.out.print("Enter Policy ID to delete: ");
                         int deleteId = sc.nextInt();
                         boolean deleted = service.deletePolicy(deleteId);
-                        System.out.println(deleted ? "✅ Policy deleted successfully!" : "❌ Deletion failed.");
+                        System.out.println(deleted ? "Policy deleted successfully!!" : "Deletion failed...");
                         break;
 
                     case 6:
-                        System.out.println("👋 Exiting the system. Thank you!");
+                        System.out.println("Exiting the system...Byee..");
                         break;
 
                     default:
-                        System.out.println("⚠️ Invalid choice. Try again.");
+                        System.out.println("Invalid choice... Try again!!");
                         break;
                 }
 
@@ -113,7 +113,7 @@ public class MainModule {
         } catch (PolicyNotFoundException e) {
             System.err.println(e.getMessage());
         } catch (Exception e) {
-            System.err.println("⚠️ Error: " + e.getMessage());
+            System.err.println("Error: " + e.getMessage());
         } finally {
             sc.close();
         }

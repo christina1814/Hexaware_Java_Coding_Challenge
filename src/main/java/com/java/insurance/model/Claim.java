@@ -2,7 +2,8 @@ package com.java.insurance.model;
 
 import java.sql.Date;
 
-public class Claim {
+public class Claim 
+{
     private int claimId;
     private String claimNumber;
     private Date dateFiled;
@@ -13,7 +14,8 @@ public class Claim {
 
     public Claim() {}
 
-    public Claim(int claimId, String claimNumber, Date dateFiled, double claimAmount, String status, int policyId, int clientId) {
+    public Claim(int claimId, String claimNumber, Date dateFiled, double claimAmount, String status, int policyId, int clientId) 
+    {
         this.claimId = claimId;
         this.claimNumber = claimNumber;
         this.dateFiled = dateFiled;
@@ -23,7 +25,7 @@ public class Claim {
         this.clientId = clientId;
     }
 
-    // Getters and Setters
+ 
     public int getClaimId() { return claimId; }
     public void setClaimId(int claimId) { this.claimId = claimId; }
 
@@ -46,7 +48,8 @@ public class Claim {
     public void setClientId(int clientId) { this.clientId = clientId; }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return "Claim{" +
                 "claimId=" + claimId +
                 ", claimNumber='" + claimNumber + '\'' +

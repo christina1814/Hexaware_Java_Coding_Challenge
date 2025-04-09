@@ -2,7 +2,8 @@ package com.java.insurance.model;
 
 import java.sql.Date;
 
-public class Payment {
+public class Payment 
+{
     private int paymentId;
     private Date paymentDate;
     private double paymentAmount;
@@ -10,14 +11,15 @@ public class Payment {
 
     public Payment() {}
 
-    public Payment(int paymentId, Date paymentDate, double paymentAmount, int clientId) {
+    public Payment(int paymentId, Date paymentDate, double paymentAmount, int clientId) 
+    {
         this.paymentId = paymentId;
         this.paymentDate = paymentDate;
         this.paymentAmount = paymentAmount;
         this.clientId = clientId;
     }
 
-    // Getters and Setters
+    
     public int getPaymentId() { return paymentId; }
     public void setPaymentId(int paymentId) { this.paymentId = paymentId; }
 
@@ -31,7 +33,8 @@ public class Payment {
     public void setClientId(int clientId) { this.clientId = clientId; }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return "Payment{" +
                 "paymentId=" + paymentId +
                 ", paymentDate=" + paymentDate +

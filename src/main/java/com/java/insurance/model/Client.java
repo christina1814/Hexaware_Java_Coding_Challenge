@@ -1,6 +1,7 @@
 package com.java.insurance.model;
 
-public class Client {
+public class Client 
+{
     private int clientId;
     private String clientName;
     private String contactInfo;
@@ -8,14 +9,15 @@ public class Client {
 
     public Client() {}
 
-    public Client(int clientId, String clientName, String contactInfo, int policyId) {
+    public Client(int clientId, String clientName, String contactInfo, int policyId) 
+    {
         this.clientId = clientId;
         this.clientName = clientName;
         this.contactInfo = contactInfo;
         this.policyId = policyId;
     }
 
-    // Getters and Setters
+    
     public int getClientId() { return clientId; }
     public void setClientId(int clientId) { this.clientId = clientId; }
 
@@ -29,7 +31,8 @@ public class Client {
     public void setPolicyId(int policyId) { this.policyId = policyId; }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return "Client{" +
                 "clientId=" + clientId +
                 ", clientName='" + clientName + '\'' +

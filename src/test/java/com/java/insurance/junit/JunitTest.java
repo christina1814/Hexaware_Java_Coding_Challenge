@@ -18,13 +18,13 @@ public class JunitTest
     public void testCreatePolicy() throws ClassNotFoundException, SQLException {
         Policy policy = new Policy(900, "Demo Plan", "TestType", 999.99, 50000.00);
         boolean result = service.createPolicy(policy);
-        assertTrue(result); // should return true
+        assertTrue(result); // true
     }
 
     @Test
     public void testGetPolicy() throws ClassNotFoundException, SQLException {
         Policy policy = new Policy(900, "Demo Plan", "Health", 999.99, 50000.00);
-        service.createPolicy(policy);  // Ensure it exists before testing
+        service.createPolicy(policy);  
         
         Policy fetchedPolicy = service.getPolicy(900);
         assertNotNull("Policy should not be null", fetchedPolicy);
@@ -46,7 +46,7 @@ public class JunitTest
     public void testGetAllPolicies() throws ClassNotFoundException, SQLException {
         Collection<Policy> policies = service.getAllPolicies();
         assertNotNull(policies);
-        assertTrue(policies.size() > 0); // Should have at least 1
+        assertTrue(policies.size() > 0); // At least 1
     }
 
     @Test
