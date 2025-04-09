@@ -16,7 +16,7 @@ public class MainModule {
             int choice;
 
             do {
-                System.out.println("\n===== Insurance Policy Management =====");
+                System.out.println("\n-------- Insurance Policy Management --------------");
                 System.out.println("1. Add Policy");
                 System.out.println("2. View All Policies");
                 System.out.println("3. Search Policy by ID");
@@ -42,13 +42,13 @@ public class MainModule {
 
                         Policy newPolicy = new Policy(pid, name, type, premiumAmount, coverageAmount);
                         boolean added = service.createPolicy(newPolicy);
-                        System.out.println(added ? "✅ Policy added successfully!" : "❌ Failed to add policy.");
+                        System.out.println(added ? "Policy added successfully!!" : "Failed to add policy...");
                         break;
 
                     case 2:
                         Collection<Policy> policies = service.getAllPolicies();
                         if (policies.isEmpty()) {
-                            System.out.println("⚠️ No policies found.");
+                            System.out.println("No policies found...");
                         } else {
                             policies.forEach(System.out::println);
                         }
